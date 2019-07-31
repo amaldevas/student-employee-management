@@ -187,12 +187,17 @@
 	<section id="stu_table">
 		<div class="row">
 			<div class="offset-md-10 col-md-2 offset-8 col-4">
-				<button class="btn btn-primary btn-md" onclick="showAdd()"s>Add New Student</button>
+				<button class="btn btn-primary btn-md" onclick="showAdd()">Add New Student</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset-md-8 col-md-2 offset-8 col-2">
+				<input type="text" id="stu_input" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
 			</div>
 		</div>
 		<div class="row">
 			<div class="offset-md-2 col-md-8 offset-2 col-8">
-				<table>
+				<table id="stu_atable">
 					<tr>
 							<th>
 								Roll.No
@@ -226,8 +231,13 @@
 			</div>
 		</div>
 		<div class="row">
+			<div class="offset-md-8 col-md-2 offset-8 col-2">
+				<input type="text" id="emp_input" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
+			</div>
+		</div>
+		<div class="row">
 			<div class="offset-md-2 col-md-8 offset-2 col-8">
-				<table>
+				<table id="emp_atable">
 					<tr>
 							<th>
 								Emp.No
