@@ -1,0 +1,50 @@
+data='[{ \
+   "url":"1.jpg", \
+   "title":"Bora Bora", \
+   "description":"Bora Bora is an island that once was a volcano, which has subsequently subsided and formed a barrier reef. The reef ecosystem allows for pristine clear blue water and reefs limit waves, providing a protected sanctuary."\
+}, \
+{ \
+   "url":"2.jpg", \
+   "title":"Longsheng", \
+   "description":"Longsheng is named after Longji, which translates to dragons backbone. The terrace resembles dragon scales as rice fields snake through the mountains." \
+}, \
+{ \
+   "url":"3.jpg", \
+   "title":"Victoria Falls", \
+   "description":"Victoria Falls that border Zambia and Zimbabwe is the largest waterfall in the world by total area. The falls transport an astonishing 1,088 cubic meters per second of water down an ~350-foot cliff." \
+}, \
+{ \
+   "url":"4.jpg", \
+   "title":"Rainbow Mountains", \
+   "description":"The Rainbow Mountains of Zhangye Danxia, China show off weathering and erosion at its most beautiful. The dramatic colors throughout the mountain are a result of trace minerals associated within the sandstone, coloring the sand in reds, greens, and yellows." \
+},\
+{\
+   "url":"5.jpg",\
+   "title":"Amazon River",\
+   "description":"The Amazon River is the artery for the largest rainforest in the world. It is the largest river in the world by discharge and one of the largest by length. The surrounding rainforest represents over half of the worlds remaining rainforest."\
+},\
+{\
+   "url":"6.jpg",\
+   "title":"",\
+   "description":""\
+},\
+{\
+   "url":"7.jpg",\
+   "title":"Railay",\
+   "description":"Railay, Thailand is a magical place only accessible by boat on a small Thai peninsula . Spend your days rock climbing the limestone cliffs, exploring vast cave systems, or swimming to nearby islands."\
+},\
+{\
+   "url":"8.jpg",\
+   "title":"Neuschwanstein",\
+   "description":"Neuschwanstein, a nineteenth-century castle in southern Germany is the inspiration for Disneylandss Sleeping Beauty Castle. This German retreat is visited regularly during summer months as a symbol of refuge and peace."\
+},\
+{ \
+   "url":"", \
+   "title":"Rainbow Mountains", \
+   "description":"The Rainbow Mountains of Zhangye Danxia, China show off weathering and erosion at its most beautiful. The dramatic colors throughout the mountain are a result of trace minerals associated within the sandstone, coloring the sand in reds, greens, and yellows." \
+},\
+{\
+   "url":"9.jpg",\
+   "title":"Fjords",\
+   "description":"Fjords are created by the slow erosion of mountain valleys as glaciers move down toward the sea. Tracy Arm Fjord in Alaska is home to Orcas and a rapidly disappearing environment."\
+}]';

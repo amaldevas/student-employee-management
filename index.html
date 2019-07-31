@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>IMAGE GALLERY</title>
+	<link rel="icon" type="image/ico" href="images/picasa.png" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="json/images.json"></script>
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="row header">
+			<div class="col-sm-2 col-md-2">
+				<a href="">
+					<img src="images/logo.png" class="logo" alt="Logo">
+				</a>
+			</div>
+			<div class="offset-md-5 col-md-1 col-sm-1 menu">
+				<a href="javascript:window.location.reload();">
+					Home
+				</a>
+			</div>
+			<div class="col-md-1 col-sm-1 menu">
+				<a href="management.html">
+					Manangement
+				</a>
+			</div>
+			<div class="col-md-1 col-sm-1 menu">
+				<a href="">
+					Gallery
+				</a>
+			</div>
+			<div class="col-md-1 col-sm-1 menu">
+				<a href="#">
+					Contact Us
+				</a>
+			</div>
+		</div>
+		<div class="row">
+				<div class="col-md-12 col-sm-12" id="slideshow">
+				</div>
+		</div>
+		</div>
+		
+	</header>
+	<section>
+		<div class="container-fluid">
+			<div class="row"  id="gallery_images">
+			</div>
+	  		<div class="modal fade" id="myModal" role="dialog">
+			    <div class="modal-dialog modal-lg modal-sm">
+			      <div class="modal-content">
+			        <div class="modal-header">
+			        	<div class="row modal-head-row">
+			        		<div id="title-modal" class="col-md-11 col-sm-8 modal-mobile">
+			        		</div>
+			        		<div class="col-md-1 col-sm-1 modal-mobile">
+			        			<button type="button" class="close" data-dismiss="modal">&times;</button>
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="modal-body">
+			        	<div class="row">
+			        		<div id="left-arrow" class="col-md-1 col-sm-2 modal-arrow-col">
+			        		</div>
+			        		<div id="image-modal" class="col-md-10 col-sm-8 modal-image-div">
+			        		</div>
+			        		<div id="right-arrow" class="col-md-1 col-sm-2 modal-arrow-col">
+			        		</div>
+			        		<div id="content-modal" class="offset-md-1 col-md-10 offset-sm-2 col-sm-8 modal-content-div">
+			        		</div>
+			        	</div>
+			        </div>
+			        <div class="modal-footer">
+			          <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+			        </div>
+			      </div>
+			    </div>
+			  </div>
+		</div>
+	</section>
+	<footer>
+		<a href="">
+			© 2003-2019 Picasa, Inc.
+		</a>
+	</footer>
+</body>
+<script type="text/javascript">
+	// $('a').click(function(event) {
+	//     event.preventDefault();
+	// });
+	var mydata = JSON.parse(data);
+	start();
+	function start() {
+		var codeBlock="";
+		var codeBlock1="";
+		for (var i = 0; i <mydata.length; i++) {
+			if(mydata[i].url) {
+				codeBlock1=codeBlock1+"<img src='images/"+mydata[i].url+"' class='banner mySlides w3-animate-fading' alt='banner'></div>";
+			}
+			else
+			{
+				mydata[i].url="no-image.png";
+			}
+			codeBlock=codeBlock+"<div class='col-md-3 col-sm-8 gal-img block-gallery'><div class='row inner-row'><div class='col-md-12 col-sm-12 gal-images-div'><img src='images/"+mydata[i].url+"' class=' gal-images image'><button class='modalOpen middle text' onclick='return openModal("+i+");'>View</button></div><div class='col-md-12 col-sm-12 img-content img-title'>"+mydata[i].title+"</div><div class='col-md-12 col-sm-12 img-content contents'>"+mydata[i].description+"</div></div></div>";
+
+		}
+		document.getElementById("gallery_images").innerHTML = codeBlock;
+		document.getElementById("slideshow").innerHTML = codeBlock1;
+	}
+	var myIndex = 0;
+	carousel();
+
+	function carousel() {
+  	var i;
+  	var x = document.getElementsByClassName("mySlides");
+  	for (i = 0; i < x.length; i++) {
+    	x[i].style.display = "none";  
+  	}
+  	myIndex++;
+  	if (myIndex > x.length)
+  		{
+  			myIndex = 1;
+  		}    
+  	x[myIndex-1].style.display = "block";  
+  	setTimeout(carousel, 10000); // Change image every 2 seconds
+	}
+	function openModal(index) {
+	  document.getElementById("image-modal").innerHTML = "<img src='images/"+mydata[index].url+"' class='image image-modal-new'>";
+	  document.getElementById("title-modal").innerHTML = "<h4 class='modal-title'>"+mydata[index].title+"</h4>";
+	  document.getElementById("content-modal").innerHTML = "<p class='modal-content-p'>"+mydata[index].description+"</p>";
+	  var left,right;
+	  if(index==0){
+	  	left=mydata.length-1;
+	  	right=index+1;
+	  }
+	  else if(index==mydata.length-1){
+	  	left=index-1;
+	  	right=0;
+	  }
+	  else
+	  {
+	  	left=index-1;
+	  	right=index+1;
+	  }
+	  document.getElementById("left-arrow").innerHTML = "<button class='arrow-btns' onclick='return openModal("+left+");'><img src='images/left.png' class='modal-arrow'></button>";
+	  document.getElementById("right-arrow").innerHTML = "<button class='arrow-btns' onclick='return openModal("+right+");'><img src='images/right.png' class='modal-arrow'></button>";
+	  $("#myModal").modal();
+	}
+</script>
+</html>

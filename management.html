@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">	
+	<title>IMAGE GALLERY</title>
+	<link rel="icon" type="image/ico" href="images/picasa.png" />
+	<link rel="stylesheet" type="text/css" href="css/reset.css">
+	<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+		 <!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<script type="text/javascript" src="js/student.js"></script>
+	<script type="text/javascript" src="js/employee.js"></script>
+</head>
+<body>
+	<header>
+		<div class="container-fluid">
+			<div class="row header">
+			<div class="col-sm-2 col-md-2">
+				<a href="">
+					<img src="images/logo.png" class="logo" alt="Logo">
+				</a>
+			</div>
+			<div class="offset-md-5 col-md-1 col-sm-1 menu">
+				<a href="javascript:window.location.reload();">
+					Home
+				</a>
+			</div>
+			<div class="col-md-1 col-sm-1 menu">
+				<a href="">
+					About Us
+				</a>
+			</div>
+			<div class="col-md-1 col-sm-1 menu">
+				<a href="index.html">
+					Gallery
+				</a>
+			</div>
+			<div class="col-md-1 col-sm-1 menu">
+				<a href="#">
+					Contact Us
+				</a>
+			</div>
+		</div>
+		<div class="row">
+				<div class="col-md-12 col-sm-12" id="slideshow">
+				</div>
+		</div>
+		</div>
+		
+	</header>
+	<section>
+		<div class="container-fluid">
+			<div class="row">
+				<div class="offset-md-9 col-md-1 col-xs-3 width-auto">
+					Management
+				</div>
+				<div class="col-md-2 col-xs-4 width-auto">
+					<select name="management" onchange="start()" id="org_id">
+					  <option value="stu">Student</option>
+					  <option value="emp">Employee</option>
+					</select>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="stu_section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="offset-md-3 col-md-6 offset-2 col-8 input-form">
+					<div class="row">
+						<div class="col-md-12 col-12 align-center form-heading">
+							Add Student
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+							<label>Roll.No*</label>
+						</div>
+						<div class="col-md-6 col-8 padding_clear">
+							<input type="number" name="stu_roll" id="stu_roll" class="input_box">
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+							<label>Name*</label>
+						</div>
+						<div class="col-md-6 col-8 padding_clear">
+							<input type="text" name="stu_name" id="stu_name" class="input_box">
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+							<label>Class</label>
+						</div>
+						<div class="col-md-6 col-8 padding_clear">
+							<input type="number" name="stu_class" id="stu_class" class="input_box">
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+							<label>Advisor</label>
+						</div>
+						<div class="col-md-6 col-8 padding_clear">
+							<input type="text" name="stu_advisor" id="stu_advisor" class="input_box">
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+						</div>
+						<div class="col-md-2 col-4 padding_clear">
+							<button class="btn btn-success btn-md" onclick="createStudent()">Submit</button>
+						</div>
+						<div class="col-md-2 col-4 padding_clear">
+							<button class="btn btn-danger btn-md" onclick="start()">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="emp_section">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="offset-md-3 col-md-6 offset-2 col-8 input-form">
+					<div class="row">
+						<div class="col-md-12 col-12 align-center form-heading">
+							Add Employee
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+							<label>Emp.No*</label>
+						</div>
+						<div class="col-md-6 col-8 padding_clear">
+							<input type="number" name="emp_no" id="emp_no" class="input_box">
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+							<label>Name*</label>
+						</div>
+						<div class="col-md-6 col-8 padding_clear">
+							<input type="text" name="emp_name" id="emp_name" class="input_box">
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+							<label>Phone No</label>
+						</div>
+						<div class="col-md-6 col-8 padding_clear">
+							<input type="number" name="emp_ph" id="emp_ph" class="input_box">
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+							<label>Project Manager</label>
+						</div>
+						<div class="col-md-6 col-8 padding_clear">
+							<input type="text" name="emp_pm" id="emp_pm" class="input_box">
+						</div>
+					</div>
+					<div class="row input-div">
+						<div class="offset-md-2 col-md-2 offset-1 col-3 padding_clear">
+						</div>
+						<div class="col-md-2 col-4 padding_clear">
+							<button class="btn btn-success btn-md" onclick="createEmployee()">Submit</button>
+						</div>
+						<div class="col-md-2 col-4 padding_clear">
+							<button class="btn btn-danger btn-md" onclick="start()">Cancel</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section id="stu_table">
+		<div class="row">
+			<div class="offset-md-10 col-md-2 offset-8 col-4">
+				<button class="btn btn-primary btn-md" onclick="showAdd()"s>Add New Student</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset-md-2 col-md-8 offset-2 col-8">
+				<table>
+					<tr>
+							<th>
+								Roll.No
+							</th>
+							<th>
+								Name
+							</th>
+							<th>
+								Class
+							</th>
+							<th>
+								Advisor
+							</th>
+							<th>
+								Edit
+							</th>
+							<th>
+								Delete
+							</th>
+						</tr>
+					<tbody id="stu_body">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<section id="emp_table">
+		<div class="row">
+			<div class="offset-md-10 col-md-2 offset-8 col-4">
+				<button class="btn btn-primary btn-md" onclick="showAdd()">Add New Employee</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="offset-md-2 col-md-8 offset-2 col-8">
+				<table>
+					<tr>
+							<th>
+								Emp.No
+							</th>
+							<th>
+								Name
+							</th>
+							<th>
+								Phone Number
+							</th>
+							<th>
+								Project Manager
+							</th>
+							<th>
+								Edit
+							</th>
+							<th>
+								Delete
+							</th>
+					</tr>
+					<tbody id="emp_body">
+					</tbody>
+				</table>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<a href="">
+			© 2003-2019 Picasa, Inc.
+		</a>
+	</footer>
+</body>
+<script type="text/javascript">
+	start();
+	$('b').click(function(event) {
+	    event.preventDefault();
+	});
+	var myIndex = 0;
+	// carousel();
+	// function carousel() {
+ //  	var i;
+ //  	var x = document.getElementsByClassName("mySlides");
+ //  	for (i = 0; i < x.length; i++) {
+ //    	x[i].style.display = "none";  
+ //  	}
+ //  	myIndex++;
+ //  	if (myIndex > x.length)
+ //  		{
+ //  			myIndex = 1;
+ //  		}    
+ //  	x[myIndex-1].style.display = "block";  
+ //  	setTimeout(carousel, 10000); // Change image every 2 seconds
+	// }
+</script>
+</html>
