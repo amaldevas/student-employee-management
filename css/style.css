@@ -163,6 +163,9 @@ body.modal-open {
 	margin: 0;
 	padding: 0;
 }
+.points{
+  cursor: pointer;
+}
 .img-title{
 	font-weight: bold;
 }
