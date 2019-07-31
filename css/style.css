@@ -209,6 +209,9 @@ body.modal-open {
 	max-height: 100%;
 	justify-content: center;	
 }
+.selectChange{
+	margin-top: 2rem;
+}
 .text > a{
 	color: white;
 }
