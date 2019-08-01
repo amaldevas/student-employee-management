@@ -51,20 +51,20 @@ function addRecord(obj,org){
 }
 function createStudent(){
 	var org=getOrg();
-	var obj=new Array({roll:document.getElementById(org+"_roll").value, name:document.getElementById(org+"_name").value, class:document.getElementById(org+"_class").value, advisor:document.getElementById(org+"_advisor").value});
+	var obj=[{roll:document.getElementById(org+"_roll").value, name:document.getElementById(org+"_name").value, class:document.getElementById(org+"_class").value, advisor:document.getElementById(org+"_advisor").value}];
 	addRecord(obj,org);
 }
 function studentTable(count,getObj){
 	var codeBlock="";
 	for(var i=0;i<count;i++){
-		codeBlock=codeBlock+"<tr><td>"+getObj[i].roll+"</td><td>"+getObj[i].name+"</td><td>"+getObj[i].class+"</td><td>"+getObj[i].advisor+"</td><td class='update_btns'><button class='btn btn-primary btn-md' onclick='getStu("+i+")'>Edit</button></td><td class='update_btns'><button class='btn btn-danger btn-md' onclick='deleteStu("+i+")'>Delete</button></td></tr>";
+		codeBlock=codeBlock+"<tr><td>"+getObj[i].roll+"</td><td>"+getObj[i].name+"</td><td>"+getObj[i].class+"</td><td>"+getObj[i].advisor+"</td><td class='update_btns'><button class='btn btn-primary btn-md' onclick='getStu("+i+")'>Edit</button></td><td class='update_btns'><button class='btn btn-danger btn-md' onclick='deleteOrg("+i+")'>Delete</button></td></tr>";
 	}
 	return codeBlock;
 }
 function putData(org){
 	var codeBlock="";
 	var count=localStorage.getItem(org+"_count");
-	var getStringObj=localStorage.getItem(org+"_data");
+	var getStringObj=localStorage.getItem(`${org}_data`);
 	var getObj = JSON.parse(getStringObj);
 	if(org=="stu"){
 		codeBlock=studentTable(count,getObj);
@@ -77,6 +77,18 @@ function putData(org){
 function getOrg(){
 	var x = document.getElementById("org_id").value;
 	return x;
+}
+function deleteOrg(index){
+	var org=getOrg();
+	var count=localStorage.getItem(org+"_count");
+	var getStringObj=localStorage.getItem(`${org}_data`);
+	var getObj = JSON.parse(getStringObj);
+	getObj.splice(index,1)
+	count--;
+	var totalObj=JSON.stringify(getObj);
+	localStorage.setItem(org+"_data", totalObj);
+	localStorage.setItem(org+"_count",count);
+	start();
 }
 function start(){
 	document.getElementById("stu_section").style.display = "none";
