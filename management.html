@@ -61,7 +61,7 @@
 	</header>
 	<section>
 		<div class="container-fluid">
-			<div class="row selectChange">
+			<div class="row">
 				<div class="offset-md-9 col-md-1 col-xs-3 width-auto">
 					Management
 				</div>
@@ -187,28 +187,23 @@
 	<section id="stu_table">
 		<div class="row">
 			<div class="offset-md-10 col-md-2 offset-8 col-4">
-				<button class="btn btn-primary btn-md" onclick="showAdd()">Add New Student</button>
-			</div>
-		</div>
-		<div class="row">
-			<div class="offset-md-8 col-md-2 offset-8 col-2">
-				<input type="text" id="stu_input" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
+				<button class="btn btn-primary btn-md" onclick="showAdd()"s>Add New Student</button>
 			</div>
 		</div>
 		<div class="row">
 			<div class="offset-md-2 col-md-8 offset-2 col-8">
-				<table id="stu_atable">
+				<table>
 					<tr>
-							<th class="points" onclick='sortTable(0,1)'>
+							<th>
 								Roll.No
 							</th>
-							<th class="points" onclick='sortTable(1,0)'>
+							<th>
 								Name
 							</th>
-							<th class="points" onclick='sortTable(2,1)'>
+							<th>
 								Class
 							</th>
-							<th class="points" onclick='sortTable(3,0)'>
+							<th>
 								Advisor
 							</th>
 							<th>
@@ -231,24 +226,19 @@
 			</div>
 		</div>
 		<div class="row">
-			<div class="offset-md-8 col-md-2 offset-8 col-2">
-				<input type="text" id="emp_input" onkeyup="search()" placeholder="Search for names.." title="Type in a name">
-			</div>
-		</div>
-		<div class="row">
 			<div class="offset-md-2 col-md-8 offset-2 col-8">
-				<table id="emp_atable">
+				<table>
 					<tr>
-							<th class="points" onclick='sortTable(0,1)'>
+							<th>
 								Emp.No
-							</th class="points" onclick='sortTable(1,0)'>
+							</th>
 							<th>
 								Name
 							</th>
-							<th class="points" onclick='sortTable(2,0)'>
+							<th>
 								Phone Number
 							</th>
-							<th class="points" onclick='sortTable(3,0)'>
+							<th>
 								Project Manager
 							</th>
 							<th>
